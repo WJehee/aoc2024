@@ -53,7 +53,19 @@ mod tests {
     use super::*;
 
     #[test]
-    fn day1() {
+    fn example() {
+        let file_path = "examples/day01.txt";
+        let contents = fs::read_to_string(file_path)
+                .expect("To read the file");
+
+        let p1 = part_one(&contents);
+        assert_eq!(p1, 11);
+        let p2 = part_two(&contents);
+        assert_eq!(p2, 31);
+    }
+
+    #[test]
+    fn input() {
         let file_path = "puzzle_inputs/day01.txt";
         let contents = fs::read_to_string(file_path)
                 .expect("To read the file");
