@@ -1,12 +1,13 @@
 
 _default:
-    just --lust
+    just --list
 
-run:
-    cargo run
-
-runday day:
+test day="":
     #!/usr/bin/env sh
-    filename=$(printf "day%02d.zig" {{day}})
-    cargo run src/$filename
+    if [ "{{day}}" == "" ]; then
+        cargo test
+    else
+        filename=$(printf "day%02d" {{day}})
+        cargo test $filename
+    fi
 

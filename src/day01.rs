@@ -1,15 +1,6 @@
 use std::{collections::HashMap, fs, iter::zip};
 
-fn main() {
-    let file_path = "puzzle_inputs/day01.txt";
-    let contents = fs::read_to_string(file_path)
-        .expect("To read the file");
-
-    part_one(&contents);
-    part_two(&contents);
-}
-
-fn part_one(contents: &str) {
+fn part_one(contents: &str) -> i32 {
     let mut left = Vec::new();
     let mut right = Vec::new();
 
@@ -29,10 +20,10 @@ fn part_one(contents: &str) {
         let diff = (l - r).abs();
         sum += diff;
     }
-    println!("Part one: {sum}");
+    sum
 }
 
-fn part_two(contents: &str) {
+fn part_two(contents: &str) -> i32 {
     let mut left = Vec::new();
     let mut counts = HashMap::new();
 
@@ -54,6 +45,23 @@ fn part_two(contents: &str) {
         let count = counts.get(&num).unwrap_or(&0);
         sum += num * count;
     }
-    println!("Part two: {sum}");
+    sum
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn day1() {
+        let file_path = "puzzle_inputs/day01.txt";
+        let contents = fs::read_to_string(file_path)
+                .expect("To read the file");
+
+        let p1 = part_one(&contents);
+        assert_eq!(p1, 1319616);
+        let p2 = part_two(&contents);
+        assert_eq!(p2, 27267728);
+    }
 }
 
