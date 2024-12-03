@@ -78,7 +78,7 @@ mod tests {
         let contents = fs::read_to_string(file_path)
             .expect("To read the file");
         assert_eq!(part_one(&contents), 442);
-        assert_eq!(part_two(&contents), -1);
+        assert_eq!(part_two(&contents), 493);
     }
 }
 
