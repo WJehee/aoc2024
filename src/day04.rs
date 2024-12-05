@@ -1,5 +1,3 @@
-use std::fs;
-
 fn part_one(contents: &str) -> i32 {
     let mut grid = Vec::new();
     let mut x_locations = Vec::new();
@@ -127,6 +125,7 @@ fn find_surrounding(grid: &Vec<Vec<char>>, location: (i32, i32), char_to_find: c
 
 #[cfg(test)]
 mod tests {
+    use std::fs;
     use super::*;
 
     #[test]

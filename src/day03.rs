@@ -1,5 +1,3 @@
-use std::fs;
-
 struct Solution {
     input: String,
     position: usize,
@@ -112,6 +110,7 @@ fn part_two(contents: &str) -> u32 {
 
 #[cfg(test)]
 mod tests {
+    use std::fs;
     use super::*;
 
     #[test]

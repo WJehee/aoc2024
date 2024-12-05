@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fs, iter::zip};
+use std::{collections::HashMap, iter::zip};
 
 fn part_one(contents: &str) -> i32 {
     let mut left = Vec::new();
@@ -50,6 +50,7 @@ fn part_two(contents: &str) -> i32 {
 
 #[cfg(test)]
 mod tests {
+    use std::fs;
     use super::*;
 
     #[test]
