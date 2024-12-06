@@ -11,3 +11,11 @@ test day="":
         cargo test $filename
     fi
 
+new day:
+    #!/usr/bin/env sh
+    filename=$(printf "day%02d" {{day}})
+    touch "examples/${filename}.txt"
+    touch "puzzle_inputs/${filename}.txt"
+    touch "src/${filename}.rs"
+    echo "mod ${filename};" >> src/lib.rs
+
