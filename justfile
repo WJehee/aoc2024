@@ -16,6 +16,6 @@ new day:
     filename=$(printf "day%02d" {{day}})
     touch "examples/${filename}.txt"
     touch "puzzle_inputs/${filename}.txt"
-    touch "src/${filename}.rs"
+    cp src/template.rs "src/${filename}.rs"
     echo "mod ${filename};" >> src/lib.rs
 
